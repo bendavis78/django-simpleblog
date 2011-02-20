@@ -1,0 +1,21 @@
+<ul class="blog-archive">
+  {% for year, info in archive.iteritems %}
+  <li class="year">
+    <a href="#">{{ year }} <span>({{ info.count }})</span></a>
+    <ul class="months">
+      {% for month, posts in info.months.iteritems %}
+      <li class="month">
+        <a href="#">{{ month }} <span>({{ posts|length }})</a>
+        <ul class="posts">
+          {% for post in posts %}
+          <li class="post">
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
