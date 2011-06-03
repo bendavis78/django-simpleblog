@@ -10,6 +10,7 @@
             } else {
                 $(this).parent().removeClass('expanded');
             }
+            return false;
         });
         $('ul.blog-archive li.month a').click(function(){
             var posts = $(this).parent().find('ul.posts')
@@ -19,6 +20,7 @@
             } else {
                 $(this).parent().removeClass('expanded');
             }
+            return false;
         });
     });
 })(jQuery);
