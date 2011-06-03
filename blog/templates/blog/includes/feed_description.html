@@ -1,0 +1,4 @@
+{% load thumbnail %}
+{% if obj.thumbnail %}<a href="http://{{ site.domain }}{{ obj.get_absolute_url }}"><img style="margin: 0 10px; border: 1px solid #484343; float: left" src="http://{{ site.domain }}{% thumbnail obj.thumbnail 100x100 %}" /></a>{% endif %}
+{{ obj.body|striptags|safe|truncatewords:150 }}
+<a style="color: #7C9E5E" href="http://{{ site.domain }}{{ obj.get_absolute_url }}">(read more...)</a>
